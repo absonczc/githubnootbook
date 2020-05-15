@@ -63,6 +63,8 @@ console.log(index) // 1
   * 多维数组扁平，排序，去重
 */
 var list = [[1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+
+
 // 扁平化
 // flat(index) index:需要展开的阵列数 [ [...],[[...]] ] 这样为2个
 var flatArr = list.flat(4);
@@ -75,4 +77,25 @@ list = [].concat(...list);
 }
 
 // or 递归
+let res = [];
+let fun = function(arry) {
+  for(let i = 0;i < arry.length;i++){
+    if(Array.isArray(arry[i])){
+      fun(arry[i])
+    }else{
+      res.push(arry[i])
+    }
+  }
+}
+
+
+// 去重,排序
+let setArr = Array.form(new Set(flatArr));
+let sortArr = setArr.sort((a,b)=>a-b)
+```
+
+> 组合装逼方式
+
+``` javascript
+let result_arr = Array.form(new Set(list.flat(4))).sort((a,b)=>a-b)
 ```
