@@ -82,3 +82,36 @@ var twoSum = function(nums, target) {
    }
 };
 ```
+
+
+## 题三：
+
+
+给一个 包含 1 ~ n 的数组，找出序列数中没有的数字
+```cmd
+输入：[0,3,1]
+输出: 2
+```
+
+## 解题
+
+``` javascript
+var missNumber =  function (nums) {
+    var i = nums.length;
+    var target = nums.reduce((a,b)=>{return a+b});
+    var total = (i+1) * i / 2
+    return total - target
+}
+```
+
+
+## 题四
+
+给定一个非负整数 num，反复将各个位上的数字相加，直到结果为一位数。
+
+``` cmd
+示例:
+输入: 38
+输出: 2 
+解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+```
